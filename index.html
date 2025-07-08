@@ -12,11 +12,33 @@
 
   <h1>Registrar Chamado</h1>
 
-  <form id="form">
-    <input type="text" class="form-control mb-2" placeholder="Nome" id="nome">
-    <textarea class="form-control mb-2" placeholder="Descrição" id="descricao"></textarea>
-    <button class="btn btn-primary">Enviar</button>
-  </form>
+  <form id="formularioMatricula" enctype="multipart/form-data">
+  <!-- Campo de Nome -->
+  <input type="text" class="form-control mb-2" placeholder="Nome completo" id="nome" name="nome" required>
+
+  <!-- Campo de E-mail -->
+  <input type="email" class="form-control mb-2" placeholder="E-mail" id="email" name="email" required>
+
+  <!-- Campo de Telefone -->
+  <input type="tel" class="form-control mb-2" placeholder="Telefone" id="telefone" name="telefone" required pattern="[0-9]{10,11}" title="Digite apenas números com DDD">
+
+  <!-- Seleção de Curso -->
+  <select class="form-control mb-2" id="curso" name="curso" required>
+    <option value="" disabled selected>Escolha seu curso</option>
+    <option value="engenharia">Engenharia</option>
+    <option value="direito">Direito</option>
+    <option value="medicina">Medicina</option>
+    <option value="arquitetura">Arquitetura</option>
+    <option value="ciencia_computacao">Ciência da Computação</option>
+  </select>
+
+  <!-- Upload de Documento -->
+  <input type="file" class="form-control mb-2" id="documento" name="documento" accept=".pdf,.jpg,.png" required>
+
+  <!-- Botão de Enviar -->
+  <button type="submit" class="btn btn-success">Finalizar matrícula</button>
+</form>
+
 
   <h2 class="mt-5">Chamados</h2>
 
